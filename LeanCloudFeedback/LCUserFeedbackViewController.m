@@ -139,7 +139,7 @@ static CGFloat const kSendButtonWidth = 60;
 
 - (UIButton *)addImageButton {
     if (_addImageButton == nil) {
-        _addImageButton = [[UIButton alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.frame) - kInputViewHeight, kAddImageButtonWidth, kInputViewHeight)];
+        _addImageButton = [[UIButton alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.frame) - kInputViewHeight - 64, kAddImageButtonWidth, kInputViewHeight)];
         _addImageButton.backgroundColor = kInputViewColor;
         [_addImageButton setImage:[UIImage imageNamed:@"feedback_add_image"] forState:UIControlStateNormal];
         _addImageButton.contentMode = UIViewContentModeScaleAspectFill;
@@ -151,9 +151,9 @@ static CGFloat const kSendButtonWidth = 60;
 - (UIButton *)sendButton {
     if (_sendButton == nil) {
         _sendButton = [UIButton buttonWithType:UIButtonTypeSystem];
-        _sendButton.frame = CGRectMake(CGRectGetWidth(self.view.frame) - kSendButtonWidth, CGRectGetHeight(self.view.frame) - kInputViewHeight, kSendButtonWidth, kInputViewHeight);
+        _sendButton.frame = CGRectMake(CGRectGetWidth(self.view.frame) - kSendButtonWidth, CGRectGetHeight(self.view.frame) - kInputViewHeight - 64, kSendButtonWidth, kInputViewHeight);
         [_sendButton.titleLabel setFont:[UIFont systemFontOfSize:12]];
-        [_sendButton setTitleColor:[UIColor colorWithRed:137.0f/255 green:137.0f/255 blue:137.0f/255 alpha:1] forState:UIControlStateNormal];
+        [_sendButton setTitleColor:[UIColor colorWithRed:57.0f/255 green:173.0f/255 blue:104.0f/255 alpha:1] forState:UIControlStateNormal];
         [_sendButton setTitle:LCLocalizedString(@"Send") forState:UIControlStateNormal];
         [_sendButton setBackgroundColor: kInputViewColor];
         [_sendButton addTarget:self action:@selector(sendButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
